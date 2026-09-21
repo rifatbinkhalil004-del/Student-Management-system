@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Activity Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <h1>Student Activity Dashboard</h1>
+      <button id="theme-toggle" class="ghost-btn" type="button">Dark mode</button>
+    </header>
+
+    <section class="stats" aria-label="Statistics">
+      <div class="stat">
+        <span class="stat-value" id="stat-total">0</span>
+        <span class="stat-label">Total</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="stat-active">0</span>
+        <span class="stat-label">Active</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="stat-inactive">0</span>
+        <span class="stat-label">Inactive</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="stat-showing">0</span>
+        <span class="stat-label">Showing</span>
+      </div>
+    </section>
+
+    <form id="student-form" class="panel" novalidate>
+      <div class="form-row">
+        <input type="text" id="student-name" placeholder="Student name" autocomplete="off">
+        <input type="text" id="student-course" placeholder="Course" autocomplete="off">
+        <button type="submit" class="primary-btn">Add student</button>
+      </div>
+      <p id="form-error" class="error hidden">Enter both a name and a course.</p>
+    </form>
+
+    <section class="controls">
+      <input type="search" id="search" placeholder="Search by name or course" autocomplete="off">
+      <div class="filters">
+        <button type="button" class="filter-btn selected" data-filter="all">All</button>
+        <button type="button" class="filter-btn" data-filter="active">Active</button>
+        <button type="button" class="filter-btn" data-filter="inactive">Inactive</button>
+      </div>
+    </section>
+
+    <ul id="student-list" class="student-list"></ul>
+    <p id="empty-message" class="empty hidden">No students to show.</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
